@@ -10,7 +10,7 @@ public class RandomizeTest {
 
 	@Test
 	public void testRandom() {
-		if (randomNumberGenerator() < 0.1) {
+		if (randomNumberGenerator() < 0.2) {
 			fail("Test Fail");
 		}
 		System.out.println("Test Ok - ");
