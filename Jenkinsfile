@@ -23,7 +23,7 @@ node {
 	stage('Push to Develop'){
 		withCredentials([usernamePassword(credentialsId: 'hectorsg_github', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]){
     	   try {
-    	   sh("git push upstream develop https://${USERNAME}:${PASSWORD}@<REPO> ")
+    	   sh("git push upstream develop https://${USERNAME}:${PASSWORD}@github.com/hector-suarez-treelogic/jenkins-pipeline")
     	    } catch(error){
             echo "No se ha podido realizar el commit ${error}"
         	}
