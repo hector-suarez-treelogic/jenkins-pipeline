@@ -6,11 +6,11 @@ import java.util.Random;
 
 import org.junit.jupiter.api.Test;
 
-public class TestRandomize {
+public class RandomizeTest {
 
 	@Test
 	public void testRandom() {
-		if (randomNumberGenerator() < 2) {
+		if (randomNumberGenerator() < 0.1) {
 			fail("Test Fail");
 		}
 		System.out.println("Test Ok - ");
