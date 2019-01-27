@@ -2,7 +2,6 @@
 *.iml
 *.war
 *.jar
-src/test/
 target/
 
 /.project
