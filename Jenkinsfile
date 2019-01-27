@@ -54,7 +54,7 @@ node {
 
 }
 
-def imagePrune(containerName){
+  def imagePrune(containerName){
     try {
         sh "docker image prune -f"
         sh "docker stop $containerName"
