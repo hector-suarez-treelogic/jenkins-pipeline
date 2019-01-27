@@ -21,8 +21,9 @@ node {
 
 
 	stage('Push to Develop'){
-		withCredentials([usernamePassword(credentialsId: 'hectorsg_github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')])
-    	sh('git push origin develop https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> ')
+		withCredentials([usernamePassword(credentialsId: 'hectorsg_github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]){
+    	  sh "git push origin develop https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> "
+    	}
 	 }
 
     stage('Sonar'){
