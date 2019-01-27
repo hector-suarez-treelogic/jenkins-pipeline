@@ -22,7 +22,11 @@ node {
 
 	stage('Push to Develop'){
 		withCredentials([usernamePassword(credentialsId: 'hectorsg_github', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]){
-    	  sh("git push origin develop https://${USERNAME}:${PASSWORD}@<REPO> ")
+    	   try {
+    	   sh("git push origin develop https://${USERNAME}:${PASSWORD}@<REPO> ")
+    	    } catch(error){
+            echo "No se ha podido realizar el commit ${error}"
+        	}
     	}
 	 }
 
