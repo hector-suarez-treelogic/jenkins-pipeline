@@ -22,7 +22,7 @@ node {
 
 	stage('Push to Develop'){
 		withCredentials([usernamePassword(credentialsId: 'hectorsg_github', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]){
-    	  sh("git push origin develop https://${GIT_USERNAME}:${GIT_PASSWORD}@<REPO> ")
+    	  sh("git push origin develop https://${USERNAME}:${PASSWORD}@<REPO> ")
     	}
 	 }
 
