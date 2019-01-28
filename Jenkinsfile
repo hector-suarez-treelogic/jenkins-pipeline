@@ -26,7 +26,7 @@ node {
     	     sh("git tag -a ${BUILD_NUMBER} -m 'Jenkins'")
     	     sh("git push  https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/hector-suarez-treelogic/jenkins-pipeline")
     	    } catch(error){
-            echo "No se ha podido realizar el commit ${error}"
+            echo "No se ha podido realizar el commit ${error} -----------------"
            }
     	}
 	 }
