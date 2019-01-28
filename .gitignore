@@ -3,6 +3,6 @@
 *.war
 *.jar
 target/
-
+.settings/
 /.project
 /bin/
