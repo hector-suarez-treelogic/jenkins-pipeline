@@ -21,12 +21,13 @@ node {
 
 
 	stage('Push to Develop'){
-		withCredentials([usernamePassword(credentialsId: 'hectorsg_github', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]){
+		withCredentials([usernamePassword(credentialsId: 'hectorsg_github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]){
     	   try {
-    	   sh("git push  https://${USERNAME}:${PASSWORD}@github.com/hector-suarez-treelogic/jenkins-pipeline")
+    	     sh("git tag -a ${BUILD_NUMBER} -m 'Jenkins'")
+    	     sh("git push  https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/hector-suarez-treelogic/jenkins-pipeline")
     	    } catch(error){
             echo "No se ha podido realizar el commit ${error}"
-        	}
+           }
     	}
 	 }
 
